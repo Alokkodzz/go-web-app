@@ -2,7 +2,7 @@ FROM golang:1.22 AS golang
 
 WORKDIR /app
 
-COPY go.mod .
+COPY go.mod ./
 
 RUN go mod download
 
@@ -20,4 +20,4 @@ COPY --from=golang /app/static ./static
 
 EXPOSE 8080
 
-CMD [ "./main" ]
+CMD ["./main"]
