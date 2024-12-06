@@ -12,7 +12,7 @@ RUN go build -o main .
 
 #Final stage - Distroless image
 
-FROM gcr.io/distroless/base-debian11
+FROM gcr.io/distroless/base
 
 COPY --from=golang /app/main .
 
