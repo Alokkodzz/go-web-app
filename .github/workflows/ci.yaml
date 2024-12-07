@@ -97,5 +97,5 @@ jobs:
         git fetch origin
         git checkout ${{ github.head_ref || github.ref_name }}  # Ensure you're on the correct branch
         git add helm/go-web-app-chart/values.yaml
-        git commit -m "Update tag in Helm chart" || echo "No changes to commit"  # Avoid errors if no changes
+        git commit -m "Update tag in Helm chart [skip ci]" || echo "No changes to commit"  # Avoid errors if no changes
         git push origin ${{ github.head_ref || github.ref_name }}
