@@ -94,11 +94,11 @@ jobs:
           sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/go-web-app-chart/values.yaml
 
       - name: Commit and push changes
-      run: |
-        git config --global user.email "alok63579@gmail.com"
-        git config --global user.name "alokkodzz"
-        git fetch origin
-        git checkout ${{ github.head_ref || github.ref_name }}  # Ensure you're on the correct branch
-        git add helm/go-web-app-chart/values.yaml
-        git commit -m "Update tag in Helm chart [skip ci]" || echo "No changes to commit"  # Avoid errors if no changes
-        git push origin ${{ github.head_ref || github.ref_name }}
+        run: |
+          git config --global user.email "alok63579@gmail.com"
+          git config --global user.name "alokkodzz"
+          git fetch origin
+          git checkout ${{ github.head_ref || github.ref_name }}  # Ensure you're on the correct branch
+          git add helm/go-web-app-chart/values.yaml
+          git commit -m "Update tag in Helm chart [skip ci]" || echo "No changes to commit"  # Avoid errors if no changes
+          git push origin ${{ github.head_ref || github.ref_name }}
