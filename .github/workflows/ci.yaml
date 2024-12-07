@@ -10,6 +10,12 @@ on:
       - 'k8s/**'
       - 'helm/**'
       - 'README.md'
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore:
+      - 'helm/**'
 
 jobs:
 
